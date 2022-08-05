@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 
 const app = express();
 
@@ -6,5 +7,6 @@ const app = express();
 // test
 app.get("/", (req, res) => {
     res.send("TEST")
-})
-app.listen("8001", () => console.log("SERVER IS RUNNING"))
+});
+
+app.listen(process.env.PORT || "5000", () => console.log("SERVER IS RUNNING"))
