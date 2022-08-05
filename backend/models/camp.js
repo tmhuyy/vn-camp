@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const imageSchema = new Schema({
+const ImageSchema = new Schema({
     url: String,
     filename: String,
 });
 
-const campSchema = new Schema({
+const CampSchema = new Schema({
     title: {
         type: String,
         required: [true, "Title must be entered"]
@@ -24,7 +24,7 @@ const campSchema = new Schema({
         type: String,
         required: [true, "Description must be entered"]
     },
-    images: [imageSchema],
+    images: [ImageSchema],
     geometry: {
         coordinates: {
             type: [Number],
@@ -38,6 +38,6 @@ const campSchema = new Schema({
     }
 });
 
-const Camp = mongoose.model("Camp", campSchema)
+const Camp = mongoose.model("Camp", CampSchema)
 
 module.exports = Camp;
