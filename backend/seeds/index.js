@@ -20,10 +20,7 @@ const seedDB = async () => {
       location: `${cities[random610].city}, ${cities[random610].admin_name}`,
       geometry: {
         type: "Point",
-        coordinates: [
-          cities[random610].longitude,
-          cities[random610].latitude,
-        ],
+        coordinates: [cities[random610].longitude, cities[random610].latitude],
       },
       images: [
         {
@@ -47,4 +44,4 @@ const seedDB = async () => {
 seedDB().then(() => {
   mongoose.connection.close();
 });
-console.log(cities.length)
+console.log(cities.length);

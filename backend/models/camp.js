@@ -35,6 +35,10 @@ const CampSchema = new Schema({
             enum: ["Point"],
             required: true
         }
+    },
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "Owner",
     }
 });
 
